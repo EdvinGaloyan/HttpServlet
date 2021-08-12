@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+
 public class RegisterServlet extends HttpServlet {
 
     private List<HttpServletRequest> requestList = new CopyOnWriteArrayList<>();
@@ -20,7 +21,8 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
+
+        this.doPost(req, resp);
     }
 
     @Override
@@ -32,10 +34,10 @@ public class RegisterServlet extends HttpServlet {
         try {
             UserService userService = new UserServiceImpl();
             boolean ifExist = userService.exist(email);
-            if (ifExist){
-                req.getRequestDispatcher("registration.jsp").forward(req,resp);
+            if (ifExist) {
+                req.getRequestDispatcher("registration.jsp").forward(req, resp);
                 req.setAttribute("errorEmail ", "User already exists");
-            }else {
+            } else {
                 User user = new User();
                 user.setName(name);
                 user.setSurname(surname);
@@ -48,6 +50,6 @@ public class RegisterServlet extends HttpServlet {
         }
 
 
-        }
+    }
 
 }
