@@ -15,10 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class RegisterServlet extends HttpServlet {
-
     private List<HttpServletRequest> requestList = new CopyOnWriteArrayList<>();
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

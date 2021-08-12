@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="register">
+<form method="post" action="/register">
     <label>Name</label>
     <input type="text" name="name">
     <br>
